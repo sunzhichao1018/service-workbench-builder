@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "title": "我的业务工作台",
+  "mode": "service",
+  "timezone": "Asia/Shanghai",
+  "labels": {
+    "object": "业务对象",
+    "task": "服务任务",
+    "execution": "执行验收"
+  },
+  "modules": [
+    "dashboard",
+    "tasks",
+    "objects",
+    "executions",
+    "finance",
+    "data"
+  ],
+  "completion": {
+    "strategy": "executions",
+    "done_statuses": [
+      "已完成"
+    ],
+    "execution_coverage": "unknown"
+  },
+  "excluded_statuses": [],
+  "sources": [
+    {
+      "dataset": "objects",
+      "path": "inputs/objects.csv",
+      "header_row": 1,
+      "fields": {
+        "id": "id",
+        "name": "name",
+        "owner": "owner",
+        "group": "group"
+      }
+    },
+    {
+      "dataset": "tasks",
+      "path": "inputs/tasks.csv",
+      "header_row": 1,
+      "fields": {
+        "id": "id",
+        "entity_id": "entity_id",
+        "title": "title",
+        "category": "category",
+        "status": "status",
+        "owner": "owner",
+        "start_date": "start_date",
+        "due_date": "due_date",
+        "completed_date": "completed_date",
+        "planned_quantity": "planned_quantity",
+        "unit": "unit"
+      }
+    },
+    {
+      "dataset": "executions",
+      "path": "inputs/executions.csv",
+      "header_row": 1,
+      "fields": {
+        "id": "id",
+        "task_id": "task_id",
+        "quantity": "quantity",
+        "accepted": "accepted",
+        "occurred_date": "occurred_date",
+        "evidence": "evidence"
+      }
+    },
+    {
+      "dataset": "transactions",
+      "path": "inputs/transactions.csv",
+      "header_row": 1,
+      "fields": {
+        "id": "id",
+        "entity_id": "entity_id",
+        "task_id": "task_id",
+        "date": "date",
+        "type": "type",
+        "amount": "amount",
+        "currency": "currency",
+        "basis": "basis"
+      }
+    }
+  ]
+}

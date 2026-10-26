@@ -1,0 +1,4 @@
+interface:
+  display_name: "业务工作台生成器"
+  short_description: "根据业务用途和上传表格，建立可复用的工作台、数据看板与服务台"
+  default_prompt: "使用 $service-workbench-builder，先确认我的业务目标和需要的文件，再根据我提供的数据建立适用的工作台与看板。"

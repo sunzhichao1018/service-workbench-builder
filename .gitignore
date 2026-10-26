@@ -1,0 +1,35 @@
+# Generated data and databases — keep user projects outside this repository.
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+*.db-*
+*.sql
+backup-*
+*.backup
+*.bak
+workspace/
+workspaces/
+my-project/
+output/
+outputs/
+user-data/
+
+# Credentials and machine-local configuration.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Runtime and editor caches.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+.idea/
+.vscode/

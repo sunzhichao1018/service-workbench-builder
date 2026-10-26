@@ -1,0 +1,25 @@
+{
+  "type": "function",
+  "function": {
+    "name": "service_workbench",
+    "description": "在宿主分配的用户目录中分析文件、配置字段映射、生成与核对业务工作台，或打包下载。能力由宿主运行环境提供，模型本身不执行脚本。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {"type": "string", "enum": ["capabilities", "init", "profile", "configure", "build", "refresh", "inspect", "package"]},
+        "output": {"type": "string", "description": "init/build/refresh 的目录或 package 的新 ZIP 路径；相对宿主 workspace-root。"},
+        "mode": {"type": "string", "enum": ["service", "project", "operations", "sales"]},
+        "file": {"type": "string", "description": "profile 的已上传文件路径。"},
+        "sheet": {"type": "string", "description": "Excel 工作表名称。"},
+        "header_row": {"type": "integer", "minimum": 1},
+        "config_path": {"type": "string", "description": "configure/build/refresh 的 blueprint JSON 路径。"},
+        "blueprint": {"type": "object", "description": "configure 时提交的完整工作台配置，字段契约见包内参考文档。"},
+        "as_of": {"type": "string", "description": "统计截至日，YYYY-MM-DD。"},
+        "full_snapshot": {"type": "boolean", "description": "refresh 必须明确为 true，表示所有配置来源均为完整快照。"},
+        "workspace": {"type": "string", "description": "inspect/package 的已生成工作台目录。"}
+      },
+      "required": ["action"],
+      "additionalProperties": false
+    }
+  }
+}
